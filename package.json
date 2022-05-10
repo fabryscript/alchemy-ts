@@ -1,6 +1,6 @@
 {
   "name": "alchemy-ts",
-  "version": "b0.01",
+  "version": "0.0.1",
   "description": "",
   "main": "./dist/alchemy.js",
   "scripts": {
