@@ -5,7 +5,7 @@
   "main": "./dist/alchemy.js",
   "scripts": {
     "build": "tsc",
-    "test": "ts-mocha tests/**/*.test.ts",
+    "test": "ts-mocha tests/**/*.tests.ts",
     "coverage": "nyc npm test report --reporter=cobertura --reporter=text-summary",
     "lint": "eslint \"**\\*.ts\""
   },
