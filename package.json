@@ -1,20 +1,29 @@
 {
   "name": "alchemy-ts",
-  "version": "1.0.0",
+  "version": "b0.01",
   "description": "",
   "main": "./dist/alchemy.js",
   "scripts": {
-    "test": "ts-mocha tests/**/*.tests.ts",
     "build": "tsc",
-    "coverage": "nyc npm test",
+    "test": "ts-mocha tests/**/*.test.ts",
+    "coverage": "nyc npm test report --reporter=cobertura --reporter=text-summary",
     "lint": "eslint \"**\\*.ts\""
   },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fabryscript/alchemy-ts.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "utilities",
+    "alchemy",
+    "objects"
+  ],
+  "author": "Fabrizio Piperno",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/fabryscript/alchemy-ts/issues"
