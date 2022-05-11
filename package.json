@@ -5,8 +5,8 @@
   "main": "./dist/alchemy.js",
   "scripts": {
     "build": "tsc",
-    "test": "ts-mocha tests/**/*.tests.ts",
-    "coverage": "nyc npm test report --reporter=cobertura --reporter=text-summary",
+    "test": "jest",
+    "coverage": "jest --coverage",
     "lint": "eslint \"**\\*.ts\""
   },
   "files": [
@@ -30,15 +30,13 @@
   },
   "homepage": "https://github.com/fabryscript/alchemy-ts#readme",
   "devDependencies": {
-    "@types/chai": "^4.3.1",
-    "@types/mocha": "^9.1.1",
+    "@types/jest": "^27.5.0",
     "@typescript-eslint/eslint-plugin": "^5.23.0",
     "@typescript-eslint/parser": "^5.23.0",
-    "chai": "^4.3.6",
     "eslint": "^8.15.0",
-    "mocha": "^10.0.0",
-    "nyc": "^15.1.0",
-    "ts-mocha": "^10.0.0",
+    "jest": "^28.1.0",
+    "ts-jest": "^28.0.2",
+    "ts-node": "^10.7.0",
     "typescript": "^4.6.4"
   }
 }
