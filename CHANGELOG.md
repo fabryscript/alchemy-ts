@@ -1,5 +1,5 @@
-# @0.2
+# @0.0.2
 Added the first utility function: **transformKeys**
 
-# @0.1
+# @0.0.1
 Started the project.
