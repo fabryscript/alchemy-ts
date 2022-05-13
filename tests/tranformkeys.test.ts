@@ -43,3 +43,18 @@ test("should return a new obj with transformed keys starting from stringed keys"
 
   expect(Object.getOwnPropertyNames(res)).toEqual(["nome", "elemento", "burstLine"])
 })
+test("should return a key with an undefined value", () => {
+  let obj = {
+    name: "Hu Tao",
+    element: undefined
+  }
+  let res = transformKeys(obj, (k => {
+    if(k === "element") k = "elemento"
+
+    return k;
+  }))
+  expect(res).toEqual({
+    name: "Hu Tao",
+    elemento: undefined
+  })
+})

@@ -1,7 +1,13 @@
+async function _asyncForEach(arr: any[], callback: (...args: any) => any) {
+  for (let i = 0; i < arr.length; i++) {
+    await callback(arr[i], i, arr);
+  }
+}
+
 /**
  * @name transformKeys
  *
- * @description Transform an object's keys into other keys that are obtained through a callback on each key
+ * @description asynchronously transform an object's keys into other keys that are obtained through a callback on each key
  *
  * @param o
  * The object to operate with
@@ -9,11 +15,10 @@
  * @param transformCallback
  * The callback function that transforms each key. Must return a string as the keys are going to be strings
  */
-
- export function transformKeys(
+ export async function asyncTransformKeys(
   o: Object,
-  transformCallback: (originalKey: string) => string
-): Object {
+  transformCallback: (originalKey: string) => Promise<string>
+): Promise<Object> {
   // length / void obj check, returns an error if object is empty.
   if (o === {}) {
     throw new Error(
@@ -46,9 +51,9 @@
   }
 
   // Callback applier
-  keys.forEach((key) => {
-    newKeys.push(transformCallback(key));
-  });
+  await _asyncForEach(keys, async (k) => {
+    newKeys.push(await transformCallback(k))
+  })
 
   /**
    * Defines the new property for the newObject
